@@ -5,5 +5,5 @@ class Shipment < ActiveRecord::Base
 	has_many :variants
 	has_many :products, through: :variants	
 
-  validates :warehouse, :order, :state, presence: true
+	validates :warehouse, :order, :state, presence: true
 end
