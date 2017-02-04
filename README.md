@@ -9,12 +9,14 @@ This is a very rough sketch of what a warehouse application might look like. The
 2. Run `rspec` to see some tests pass!
 3. Run `bin/rails server` to run the app.
 
-Here's a quick sketch of how these models are structured, and how they related to one another:
+Here's a quick sketch of how these models are structured, and how they are related to one another:
 ![Alt text](/app/assets/images/warehaus_schema.jpeg?raw=true "Warehaus Schema Structure")
 
 ## Things I'd like to work on:
 
 * Fix my broken test -- there's an issue with how I've set up `FactoryGirl` and it seems like that's causing problems in being able to get my `Shipment#assign_warehouse` to work. If I let myself keep working on this beyond the time limit, I'd like to tackle that first.
+
+* Turn the scope and `assign_warehouse` logic into a service object potentially? Right now, I can already foresee this being way more complex in the future.
 
 * Add some uniqueness restrictions, since I realize that the validations I have aren't really enough.
 

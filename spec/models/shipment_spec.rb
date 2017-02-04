@@ -10,13 +10,13 @@ RSpec.describe Shipment, type: :model do
   	let!(:product) { FactoryGirl.create(:product) }
   	let!(:variant) { FactoryGirl.create(:variant) }
 
+  	let(:order) { FactoryGirl.create(:order) }
+  	let(:shipment) { order.shipments.first }
+
   	before(:each) do
   		warehouse_with_inventory.variants << variant
   	end
   	
-  	let(:order) { FactoryGirl.create(:order) }
-  	let(:shipment) { order.shipments.first }
-
   	it "finds the warehouse with the highest inventory of line items" do
   		expect(shipment.warehouse).to eq(nil)
 
