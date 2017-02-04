@@ -18,10 +18,16 @@ class AddModelAssocationColumns < ActiveRecord::Migration
     	t.string :size
     end
 
+    create_table :line_items do |t|
+      t.references :order
+      t.references :variant
+    end
+
     create_table :inventory_items do |t|
     	t.references :variant
     	t.references :warehouse
-    	t.integer :quantity
+      t.references :order
+      t.references :line_item
     end
 
     create_table :orders do |t|

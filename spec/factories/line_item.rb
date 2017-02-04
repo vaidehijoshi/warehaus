@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :shipment do
+  factory :line_item do
     association :order, factory: :order
-    state 'pending'
+    association :variant, factory: :variant
   end
 end
 

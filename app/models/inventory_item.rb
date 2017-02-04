@@ -1,8 +1,10 @@
 class InventoryItem < ActiveRecord::Base
-	# Representation of which/how many variants physically
-	# reside in a warehouse at any given time.
+	# Representation of which and how many variants
+	# physically reside in a warehouse at any given time.
 	belongs_to :variant
 	belongs_to :warehouse
+	belongs_to :order
+	belongs_to :line_item
 
-	validates :variant, :warehouse, :quantity, presence: true
+	validates :variant, :warehouse, presence: true
 end

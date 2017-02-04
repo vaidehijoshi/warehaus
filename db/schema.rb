@@ -16,7 +16,13 @@ ActiveRecord::Schema.define(version: 20170202213517) do
   create_table "inventory_items", force: :cascade do |t|
     t.integer "variant_id"
     t.integer "warehouse_id"
-    t.integer "quantity"
+    t.integer "order_id"
+    t.integer "line_item_id"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "variant_id"
   end
 
   create_table "orders", force: :cascade do |t|
